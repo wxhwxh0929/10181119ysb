@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script  src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<input  type="text" v-model="width"/>
+			<input  type="text" v-model="height"/>
+			<!--<input  type="text"  v-model="bg" />-->
+			<div  v-bind:style="{width: width + 'px',height: height + 'px',background: bg1}">wowowowo</div>
+			<input  type="number" v-model="width"/>
+			<input  type="number" v-model="height" />
+			<input  type="color" v-model="bg2" />
+			<div  v-bind:style="{width: width + 'px',height: height + 'px',background: bg2}">111</div>
+			<input  type="range" v-model="r"  min="0"  max="255"/>
+			<input  type="range" v-model="g"  min="0"  max="255"/>
+			<input  type="range" v-model="b"  min="0"  max="255"/>
+			<div  v-bind:style="{width: width + 'px',height: height + 'px',background: 'rgb(' + r + ',' + g + ',' + b + ')'}">111</div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el : "#box",
+				data : {
+					width : 200,
+					height : 200,
+					bg1 : "red",
+					bg2 : "#ccc",
+					r : 0,
+					g : 0,
+					b : 0
+				}
+			})
+		</script>
+	</body>
+	
+</html>
